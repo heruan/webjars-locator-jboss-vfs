@@ -1,4 +1,4 @@
-package com.moandjiezana.webjars.locator.urlprotocols;
+package com.webjars.locator.urlprotocols;
 
 import static org.webjars.WebJarAssetLocator.WEBJARS_PATH_PREFIX;
 
