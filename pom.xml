@@ -6,7 +6,7 @@
     <artifactId>oss-parent</artifactId>
     <version>7</version>
   </parent>
-  <groupId>com.moandjiezana.webjars</groupId>
+  <groupId>org.webjars</groupId>
   <artifactId>webjars-locator-jboss-vfs</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <name>Extension for the JBoss AS virtual file system</name>
@@ -17,11 +17,17 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  <scm>
+    <url>http://github.com/webjars/webjars-locator-jboss-vfs</url>
+    <connection>scm:git:https://github.com/webjars/webjars-locator-jboss-vfs.git</connection>
+    <developerConnection>scm:git:https://github.com/webjars/webjars-locator-jboss-vfs.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
   <dependencies>
     <dependency>
       <groupId>org.webjars</groupId>
-      <artifactId>webjars-locator</artifactId>
-      <version>0.19</version>
+      <artifactId>webjars-locator-core</artifactId>
+      <version>0.30</version>
     </dependency>
     <dependency>
       <groupId>org.jboss</groupId>
@@ -78,6 +84,22 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.17</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.6</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>sonatype-nexus-staging</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
       </plugin>
     </plugins>
   </build>
